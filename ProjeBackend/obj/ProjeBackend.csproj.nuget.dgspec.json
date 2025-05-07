@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\polat\\OneDrive\\Masaüstü\\Yeni klasör\\Gorsel_Programlama_Proje\\ProjeBackend\\ProjeBackend.csproj": {}
+    "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\ProjeBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\polat\\OneDrive\\Masaüstü\\Yeni klasör\\Gorsel_Programlama_Proje\\ProjeBackend\\ProjeBackend.csproj": {
+    "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\ProjeBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Yeni klasör\\Gorsel_Programlama_Proje\\ProjeBackend\\ProjeBackend.csproj",
+        "projectUniqueName": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\ProjeBackend.csproj",
         "projectName": "ProjeBackend",
-        "projectPath": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Yeni klasör\\Gorsel_Programlama_Proje\\ProjeBackend\\ProjeBackend.csproj",
+        "projectPath": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\ProjeBackend.csproj",
         "packagesPath": "C:\\Users\\polat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Yeni klasör\\Gorsel_Programlama_Proje\\ProjeBackend\\obj\\",
+        "outputPath": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

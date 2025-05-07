@@ -4,8 +4,11 @@
 import 'package:flutter/material.dart';
 import 'package:gorsel_programlama_proje/components/custom_card.dart';
 import 'package:gorsel_programlama_proje/models/game_model.dart';
+import 'package:gorsel_programlama_proje/pages/add_card_page.dart';
 import 'package:gorsel_programlama_proje/pages/choice_game_detail_menu_page.dart';
+import 'package:gorsel_programlama_proje/pages/my_games_page.dart';
 import 'package:gorsel_programlama_proje/services/game_service.dart';
+import 'package:gorsel_programlama_proje/services/user_service.dart';
 
 class ChoiceGameMenuPage extends StatefulWidget {
   const ChoiceGameMenuPage({super.key});
@@ -58,6 +61,50 @@ class _ChoiceGameMenuPageState extends State<ChoiceGameMenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton:
+          UserService.user == null
+              ? null
+              : FloatingActionButton(
+                elevation: 10,
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder:
+                        (context) => Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ListTile(
+                              leading: Icon(Icons.add),
+                              title: Text('Oyun Oluştur'),
+                              onTap: () {
+                                Navigator.pop(context);
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => AddCardPage(),
+                                  ),
+                                );
+                              },
+                            ),
+                            ListTile(
+                              leading: Icon(Icons.videogame_asset),
+                              title: Text('Oyunlarım'),
+                              onTap: () {
+                                Navigator.pop(context);
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MyGamesPage(),
+                                  ),
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                  );
+                },
+                child: Icon(Icons.add),
+              ),
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {

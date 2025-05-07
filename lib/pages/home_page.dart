@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gorsel_programlama_proje/components/box.dart';
 import 'package:gorsel_programlama_proje/components/slide_animation.dart';
-import 'package:gorsel_programlama_proje/pages/add_card_page.dart';
 import 'package:gorsel_programlama_proje/pages/choice_game_menu_page.dart';
 import 'package:gorsel_programlama_proje/pages/login_page.dart';
-import 'package:gorsel_programlama_proje/pages/my_games_page.dart';
 import 'package:gorsel_programlama_proje/pages/quizintropage.dart';
 import 'package:gorsel_programlama_proje/services/user_service.dart';
 
@@ -19,52 +17,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton:
-          UserService.user == null
-              ? null
-              : FloatingActionButton(
-                elevation: 10,
-                onPressed: () {
-                  showModalBottomSheet(
-                    context: context,
-                    builder:
-                        (context) => Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            ListTile(
-                              leading: Icon(Icons.add),
-                              title: Text('Oyun Oluştur'),
-                              onTap: () {
-                                Navigator.pop(context);
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => AddCardPage(),
-                                  ),
-                                );
-                              },
-                            ),
-                            ListTile(
-                              leading: Icon(Icons.videogame_asset),
-                              title: Text('Oyunlarım'),
-                              onTap: () {
-                                Navigator.pop(context);
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => MyGamesPage(),
-                                  ),
-                                );
-                              },
-                            ),
-                            SizedBox(height: 30),
-                          ],
-                        ),
-                  );
-                },
-                child: Icon(Icons.add),
-              ),
-
       appBar: AppBar(
         actions: [
           UserService.user == null
