@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\altan.png",
+      "PackagePath": "staticwebassets\\images\\cards\\altan.png"
+    },
+    {
       "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\aydin.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\aydin.jpeg"
     },

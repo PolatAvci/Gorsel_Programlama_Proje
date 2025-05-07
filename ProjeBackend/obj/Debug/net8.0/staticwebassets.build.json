@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JrI/ErLQOkeSD9+0RTdLXClGAmNpdGAfEqQdZ4F6Rp8=",
+  "Hash": "bqxHhVFqrxEWOyNs6nQTj8QN4oqLlPUk4imPty71a9M=",
   "Source": "ProjeBackend",
   "BasePath": "_content/ProjeBackend",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\altan.png",
+      "SourceId": "ProjeBackend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\",
+      "BasePath": "_content/ProjeBackend",
+      "RelativePath": "images/cards/altan#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "apnqxject3",
+      "Integrity": "fsfhOYHfetEEC4QnFaB6ilJi1pXJNLULupON5tT9ATA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cards\\altan.png"
+    },
     {
       "Identity": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\aydin.jpeg",
       "SourceId": "ProjeBackend",
@@ -354,6 +375,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "images/cards/altan.apnqxject3.png",
+      "AssetFile": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\altan.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2774527"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fsfhOYHfetEEC4QnFaB6ilJi1pXJNLULupON5tT9ATA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 10:08:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "apnqxject3"
+        },
+        {
+          "Name": "label",
+          "Value": "images/cards/altan.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fsfhOYHfetEEC4QnFaB6ilJi1pXJNLULupON5tT9ATA="
+        }
+      ]
+    },
+    {
+      "Route": "images/cards/altan.png",
+      "AssetFile": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\altan.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2774527"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fsfhOYHfetEEC4QnFaB6ilJi1pXJNLULupON5tT9ATA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 10:08:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fsfhOYHfetEEC4QnFaB6ilJi1pXJNLULupON5tT9ATA="
+        }
+      ]
+    },
     {
       "Route": "images/cards/aydin.jpeg",
       "AssetFile": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Güncel\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\aydin.jpeg",

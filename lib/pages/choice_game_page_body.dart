@@ -64,6 +64,7 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
                       widget.game.selectFirstCard();
                       setState(() {
                         widget.game.updateCurrentRound();
+                        showAnimation = true;
                       });
                       widget.onGameUpdated();
                     },
@@ -121,6 +122,7 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
                       widget.game.selectSecondCard();
                       setState(() {
                         widget.game.updateCurrentRound();
+                        showAnimation = true;
                       });
                       widget.onGameUpdated();
                     },
@@ -219,13 +221,15 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
     } else if (ad1 == "Emir" && ad2 == "Emir (Prime)" ||
         ad1 == "Emir (Prime)" && ad2 == "Emir") {
       animationPath = "assets/animations/Code.json";
+    } else if (ad1 == "Emir" && ad2 == "Oğuz" ||
+        ad1 == "Oğuz" && ad2 == "Emir" ||
+        ad1 == "Emir (Prime)" && ad2 == "Oğuz" ||
+        ad1 == "Oğuz" && ad2 == "Emir (Prime)") {
+      animationPath = "assets/animations/Beer.json";
     }
     if (animationPath == null || animationPath.isEmpty) {
       return SizedBox();
     }
-    setState(() {
-      showAnimation = true;
-    });
     return Align(
       alignment: Alignment.center,
       child: Lottie.asset(
@@ -234,6 +238,7 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
         width: 300,
         height: 300,
         onLoaded: (composition) {
+          _controller.reset();
           _controller.duration = composition.duration;
           _controller.duration = duration;
           _controller.forward();

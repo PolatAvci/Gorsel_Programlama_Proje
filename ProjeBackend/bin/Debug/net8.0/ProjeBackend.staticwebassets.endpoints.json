@@ -3,6 +3,88 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
+      "Route": "images/cards/altan.apnqxject3.png",
+      "AssetFile": "images/cards/altan.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2774527"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fsfhOYHfetEEC4QnFaB6ilJi1pXJNLULupON5tT9ATA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 10:08:28 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "apnqxject3"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fsfhOYHfetEEC4QnFaB6ilJi1pXJNLULupON5tT9ATA="
+        },
+        {
+          "Name": "label",
+          "Value": "images/cards/altan.png"
+        }
+      ]
+    },
+    {
+      "Route": "images/cards/altan.png",
+      "AssetFile": "images/cards/altan.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2774527"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fsfhOYHfetEEC4QnFaB6ilJi1pXJNLULupON5tT9ATA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 10:08:28 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fsfhOYHfetEEC4QnFaB6ilJi1pXJNLULupON5tT9ATA="
+        }
+      ]
+    },
+    {
       "Route": "images/cards/aydin.jpeg",
       "AssetFile": "images/cards/aydin.jpeg",
       "Selectors": [],
