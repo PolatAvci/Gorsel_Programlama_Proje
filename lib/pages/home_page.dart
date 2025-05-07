@@ -68,8 +68,8 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: Image.network(
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMiRp56ehUts3rR_luctaPGEx7TXd1AH4CiQ&s",
+                    child: Image.asset(
+                      "assets/icons/Logo.png",
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Expanded(
-              child: Image.asset("assets/icons/vs.png", fit: BoxFit.contain),
+              child: Image.asset("assets/icons/arrow.png", fit: BoxFit.contain),
             ),
             Expanded(
               flex: 4,
