@@ -29,6 +29,8 @@ class ChoiceGameDetailMenuPage extends StatefulWidget {
 }
 
 class _ChoiceGameDetailMenuPageState extends State<ChoiceGameDetailMenuPage> {
+  String selectedGameMode = 'Klasik mod'; // Varsayılan mod
+
   void sortCardByWinRate() {
     widget.cards.sort(
       (a, b) =>
@@ -161,28 +163,50 @@ class _ChoiceGameDetailMenuPageState extends State<ChoiceGameDetailMenuPage> {
           SizedBox(height: 10),
           Text(widget.description),
           SizedBox(height: 10),
-          widget.isGameOver
-              ? SizedBox()
-              : CustomButton(
-                text: "Oyna",
-                width: MediaQuery.of(context).size.width * 0.2,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder:
-                          (context) => CohiceGamePage(
-                            cards: widget.cards,
-                            round: widget.round,
-                            title: widget.title,
-                            description: widget.description,
-                          ),
-                    ),
-                  ).then((_) {
-                    setState(() {});
-                  });
-                },
-              ),
+          if (!widget.isGameOver) ...[
+            DropdownButton<String>(
+              value: selectedGameMode,
+              onChanged: (String? newValue) {
+                setState(() {
+                  selectedGameMode = newValue!;
+                });
+              },
+              items:
+                  <String>[
+                    'Klasik mod',
+                    'Turnuva modu',
+                  ].map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+            ),
+            SizedBox(height: 10),
+            CustomButton(
+              text: "Oyna",
+              width: MediaQuery.of(context).size.width * 0.2,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:
+                        (context) => CohiceGamePage(
+                          cards: widget.cards,
+                          round: widget.round,
+                          mode: selectedGameMode,
+                          title: widget.title,
+                          description: widget.description,
+                          // ÖNEMLİ: Seçilen modu buraya taşıyabilirsin!
+                          // choiceGameMode: selectedGameMode, gibi parametre eklemen gerekir.
+                        ),
+                  ),
+                ).then((_) {
+                  setState(() {});
+                });
+              },
+            ),
+          ],
         ],
       ),
     );

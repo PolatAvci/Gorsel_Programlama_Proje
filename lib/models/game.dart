@@ -8,8 +8,12 @@ class Game {
   final List<CardModel> _selectedCards = [];
   final List<CardModel> _rankCard = [];
   int _currentRound = 1;
+  final int _tournamentRound;
+  int _currentTournamentRound = 1;
 
-  Game({required this.round, required this.cards}) : _roundCount = round {
+  Game({required this.round, required this.cards})
+    : _roundCount = round,
+      _tournamentRound = (cards.length - 1) {
     if (!_isPowerOfTwo(round)) {
       throw Exception("Round sayısı ikini kuvveti olmalıdır");
     }
@@ -30,6 +34,10 @@ class Game {
   get isGameOver => _isGameover;
 
   get rankCard => _rankCard;
+
+  get tournamentRound => _tournamentRound;
+
+  get currentTournamentRound => _currentTournamentRound;
 
   void updateCurrentRound() {
     if (_currentRound == round) {
@@ -76,6 +84,21 @@ class Game {
     _makeChoice(1, 0); // ikinci kartı seçip ilk kartı siler
   }
 
+  void deSelectTournament(int deSelectedIndex) {
+    _rankCard.insert(0, cards.removeAt(deSelectedIndex));
+  }
+
+  void updateTournamentTour() {
+    _currentTournamentRound++;
+    if (_currentTournamentRound == _tournamentRound + 1) {
+      _isGameover = true;
+      _rankCard.insert(
+        0,
+        cards.removeAt(0),
+      ); // oyun bitince sona kalan kartı da sıralamaya dahil eder
+    }
+  }
+
   void restart() {
     _isGameover = false;
 
@@ -89,6 +112,7 @@ class Game {
     _selectedCards.clear();
     _rankCard.clear();
     _currentRound = 1;
+    _currentTournamentRound = 1;
     round = _roundCount; // roundu başlangıçtaki sayısına getirir
   }
 }

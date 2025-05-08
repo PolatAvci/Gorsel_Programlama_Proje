@@ -10,12 +10,14 @@ class CohiceGamePage extends StatefulWidget {
   final String title;
   final String description;
   final int round;
+  final String mode;
   final List<CardModel> cards;
   const CohiceGamePage({
     super.key,
     required this.title,
     required this.description,
     required this.round,
+    required this.mode,
     required this.cards,
   });
 
@@ -108,6 +110,7 @@ class _CohiceGamePageState extends State<CohiceGamePage> {
               )
               : ChoiceGamePageBody(
                 game: game,
+                mode: widget.mode,
                 onGameUpdated: () {
                   setState(
                     () {},

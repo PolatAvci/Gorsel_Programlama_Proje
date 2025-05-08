@@ -8,10 +8,12 @@ import 'package:lottie/lottie.dart';
 
 class ChoiceGamePageBody extends StatefulWidget {
   final Game game;
+  final String mode;
   final VoidCallback onGameUpdated;
   const ChoiceGamePageBody({
     super.key,
     required this.game,
+    required this.mode,
     required this.onGameUpdated,
   });
 
@@ -52,7 +54,12 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
         children: [
           Column(
             children: [
-              Text("${widget.game.currentRound} / ${widget.game.round}"),
+              if (widget.mode == "Klasik mod")
+                Text("${widget.game.currentRound} / ${widget.game.round}"),
+              if (widget.mode == "Turnuva modu")
+                Text(
+                  "${widget.game.currentTournamentRound} / ${widget.game.tournamentRound}",
+                ),
               SizedBox(height: 10),
               Expanded(
                 flex: 4,
@@ -61,12 +68,21 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
                   startOffsetY: -1.5,
                   child: Box(
                     onpressed: () {
-                      widget.game.selectFirstCard();
-                      setState(() {
-                        widget.game.updateCurrentRound();
-                        showAnimation = true;
-                      });
-                      widget.onGameUpdated();
+                      if (widget.mode == "Klasik mod") {
+                        widget.game.selectFirstCard();
+                        setState(() {
+                          widget.game.updateCurrentRound();
+                          showAnimation = true;
+                        });
+                        widget.onGameUpdated();
+                      } else {
+                        setState(() {
+                          widget.game.deSelectTournament(1);
+                          widget.game.updateTournamentTour();
+                          showAnimation = true;
+                        });
+                        widget.onGameUpdated();
+                      }
                     },
                     child: Stack(
                       children: [
@@ -119,12 +135,21 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
                   startOffsetY: 1.5,
                   child: Box(
                     onpressed: () {
-                      widget.game.selectSecondCard();
-                      setState(() {
-                        widget.game.updateCurrentRound();
-                        showAnimation = true;
-                      });
-                      widget.onGameUpdated();
+                      if (widget.mode == "Klasik mod") {
+                        widget.game.selectSecondCard();
+                        setState(() {
+                          widget.game.updateCurrentRound();
+                          showAnimation = true;
+                        });
+                        widget.onGameUpdated();
+                      } else {
+                        setState(() {
+                          widget.game.deSelectTournament(0);
+                          widget.game.updateTournamentTour();
+                          showAnimation = true;
+                        });
+                        widget.onGameUpdated();
+                      }
                     },
                     child: Stack(
                       children: [
@@ -169,10 +194,13 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
               ),
             ],
           ),
-          // Lottie animasyonu tam VS logosunun üstüne gelsin
-          showAnimation
-              ? animation(widget.game.cards[0].name, widget.game.cards[1].name)
-              : SizedBox.shrink(),
+          if (widget.mode == "Klasik mod")
+            showAnimation
+                ? animation(
+                  widget.game.cards[0].name,
+                  widget.game.cards[1].name,
+                )
+                : SizedBox.shrink(),
         ],
       ),
     );
