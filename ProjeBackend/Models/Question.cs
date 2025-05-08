@@ -26,6 +26,11 @@ namespace ProjeBackend.Models
 
         [Required]
         public string? Category { get; set; }
-        public ICollection<Score>Scores {get;set;}
+      
+        [Required]
+    public int Difficulty { get; set; }
+    
+            public ICollection<Score>Scores {get;set;}
+        
     }
 }

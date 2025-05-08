@@ -263,12 +263,9 @@ class _QuizGameOverState extends State<QuizGameOver>
             right: 20,
             child: GestureDetector(
               onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => QuizIntroPage(),
-                  ), // HomePage yönlendirmesi
-                );
+                Navigator.pop(context);
+                Navigator.pop(context);
+                Navigator.pop(context);
               },
               child: Container(
                 decoration: BoxDecoration(

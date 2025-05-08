@@ -70,7 +70,24 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
 
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(response.body);
-      return data.map((json) => Question.fromJson(json)).toList();
+      List<Question> allQuestions =
+          data.map((json) => Question.fromJson(json)).toList();
+
+      Map<int, List<Question>> groupedQuestions = {};
+      for (var question in allQuestions) {
+        groupedQuestions.putIfAbsent(question.difficulty, () => []);
+        groupedQuestions[question.difficulty]!.add(question);
+      }
+
+      var sortedKeys = groupedQuestions.keys.toList()..sort();
+
+      List<Question> finalQuestions = [];
+      for (var key in sortedKeys) {
+        groupedQuestions[key]!.shuffle();
+        finalQuestions.addAll(groupedQuestions[key]!);
+      }
+
+      return finalQuestions;
     } else {
       throw Exception('Failed to load questions');
     }
@@ -129,7 +146,7 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
   }
 
   void startTimer() {
-    timer = Timer.periodic(Duration(seconds: 1), (t) async {
+    timer = Timer.periodic(Duration(seconds: 2), (t) async {
       if (timeLeft > 0) {
         setState(() => timeLeft--);
         if (timeLeft == 10) {
@@ -154,8 +171,11 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
     final questions = await _questionsFuture;
     final question = questions[currentQuestionIndex];
     final correctIndex = question.correctAnswerIndex;
-
-    timer?.cancel();
+    if (!doubleAnswerActive) {
+      timer?.cancel();
+    } else if (doubleAnswerActive && correctIndex == index) {
+      timer?.cancel();
+    }
 
     // Double Answer first attempt
     if (doubleAnswerActive && firstSelectedAnswer == -1) {
@@ -277,6 +297,7 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
     if (usedSkipQuestion || questionAnswered) return;
     setState(() => usedSkipQuestion = true);
     timer?.cancel();
+    player.stop();
     goToNextQuestion();
   }
 
@@ -475,6 +496,27 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
                                             ),
                                           ],
                                         ),
+                                        // YENİ: Kullanıcı Bilgisi
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons
+                                                  .account_circle, // veya Image.asset(...)
+                                              color: Colors.white,
+                                              size: 24,
+                                            ),
+                                            SizedBox(width: 6),
+                                            Text(
+                                              UserService.user?.username ??
+                                                  "Misafir", // Kullanıcı adı veya "Misafir"
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+
                                         Row(
                                           children: [
                                             Icon(
@@ -613,15 +655,91 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
                   left: 20,
                   child: IconButton(
                     icon: const Icon(Icons.arrow_back, color: Colors.white),
-                    onPressed:
-                        () => Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder:
-                                (context) =>
-                                    QuizHomePage(category: widget.category),
-                          ),
-                        ),
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            backgroundColor: Colors.deepPurple[400],
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.0),
+                            ),
+                            title: const Text(
+                              'Emin misiniz?',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30.0,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            content: const Text(
+                              'Oyundan çıkmak istediğinize emin misiniz?',
+                              style: TextStyle(color: Colors.white),
+                              textAlign: TextAlign.center,
+                            ),
+                            actions: <Widget>[
+                              Center(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.redAccent,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(
+                                            12.0,
+                                          ),
+                                        ),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.of(
+                                          context,
+                                        ).pop(); // Dialogu kapat
+                                      },
+                                      child: const Text(
+                                        'Hayır',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                    ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor:
+                                            Colors.greenAccent[400],
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(
+                                            12.0,
+                                          ),
+                                        ),
+                                      ),
+                                      onPressed: () {
+                                        timer?.cancel();
+                                        Navigator.pop(context);
+                                        Navigator.pop(context);
+                                      },
+                                      child: const Text(
+                                        'Evet',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                            ],
+                          );
+                        },
+                      );
+                    },
                   ),
                 ),
               ],

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:gorsel_programlama_proje/models/score_history_item.dart'; // Yeni ScoreHistoryItem modelini import edin
+import 'package:gorsel_programlama_proje/models/score_history_item.dart';
 import 'package:gorsel_programlama_proje/pages/awards.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
 
 class ScoreHistoryPage extends StatefulWidget {
-  final int userId; // Giriş yapan kullanıcının ID’si
-  final ScoreHistoryItem? recentEntry; // Yeni eklenen skor kaydını al
+  final int userId;
+  final ScoreHistoryItem? recentEntry;
 
   const ScoreHistoryPage({super.key, required this.userId, this.recentEntry});
 
@@ -16,13 +16,13 @@ class ScoreHistoryPage extends StatefulWidget {
 
 class _ScoreHistoryPageState extends State<ScoreHistoryPage> {
   late Future<List<ScoreHistoryItem>> _skorGecmisiGelecegi;
+  final Map<int, ScoreHistoryItem> _enSonSkorlar =
+      {}; // Kullanıcı ID'sine göre en son skor
 
   @override
   void initState() {
     super.initState();
-    _skorGecmisiGelecegi = fetchScoreHistory(
-      widget.userId,
-    ); // Yeni fetch fonksiyonunu kullanın
+    _skorGecmisiGelecegi = fetchScoreHistory(widget.userId);
   }
 
   @override
@@ -88,16 +88,35 @@ class _ScoreHistoryPageState extends State<ScoreHistoryPage> {
             } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
               return const Center(child: Text('Henüz skor kaydı bulunmuyor.'));
             } else {
-              // DB'den gelen skor listesi
               final List<ScoreHistoryItem> skorGecmisi = snapshot.data!;
 
-              // Eğer yeni eklenen skor varsa listeye ekle
+              // Yeni eklenen skoru işle
               if (widget.recentEntry != null) {
-                skorGecmisi.add(widget.recentEntry!);
+                _enSonSkorlar.update(
+                  widget.recentEntry!.userId,
+                  (existing) =>
+                      widget.recentEntry!.datetime.isAfter(existing.datetime)
+                          ? widget.recentEntry!
+                          : existing,
+                  ifAbsent: () => widget.recentEntry!,
+                );
               }
 
-              // Skor ve zaman sırasına göre sırala
-              skorGecmisi.sort((a, b) {
+              // Veritabanından gelen skor geçmişini işle
+              for (var skor in skorGecmisi) {
+                _enSonSkorlar.update(
+                  skor.userId,
+                  (existing) =>
+                      skor.datetime.isAfter(existing.datetime)
+                          ? skor
+                          : existing,
+                  ifAbsent: () => skor,
+                );
+              }
+
+              // En son skorları listeye dönüştür ve sırala
+              final enSonSkorListesi = _enSonSkorlar.values.toList();
+              enSonSkorListesi.sort((a, b) {
                 int skorKarsilastirma = b.scorePuan.compareTo(a.scorePuan);
                 return skorKarsilastirma != 0
                     ? skorKarsilastirma
@@ -106,9 +125,9 @@ class _ScoreHistoryPageState extends State<ScoreHistoryPage> {
 
               return ListView.builder(
                 padding: const EdgeInsets.all(16),
-                itemCount: skorGecmisi.length,
+                itemCount: enSonSkorListesi.length,
                 itemBuilder: (context, index) {
-                  final skorKaydi = skorGecmisi[index];
+                  final skorKaydi = enSonSkorListesi[index];
                   String formattedDate = DateFormat(
                     'dd MMM - HH:mm:ss',
                     'tr',

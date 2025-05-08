@@ -112,10 +112,7 @@ class _QuizHomePageState extends State<QuizHomePage>
             left: 10,
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => QuizIntroPage()),
-                );
+                Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(0),

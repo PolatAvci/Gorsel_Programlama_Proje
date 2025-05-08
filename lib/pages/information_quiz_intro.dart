@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 class InformationQuizIntro extends StatelessWidget {
   final List<Map<String, dynamic>> rules = [
+    {
+      "emoji": "👤",
+      "text": "Misafir oyuncu oyunu oynayabilir ancak skor tablosunu göremez.",
+    },
+
     {"emoji": "✔️", "text": "Her doğru cevap 10 puan kazandırır."},
     {
       "emoji": "❌",
@@ -16,7 +21,11 @@ class InformationQuizIntro extends StatelessWidget {
     },
     {"emoji": "📈", "text": "Skor tablosunda zirveye adını yazdır."},
     {"emoji": "🎯", "text": "Sorular rastgele sırayla karşına çıkacaktır."},
-    {"emoji": "📅", "text": "Sorular kategorilere göre hazırlanmıştır."},
+    {
+      "emoji": "🧠",
+      "text":
+          "Sorular kategorilere göre hazırlanmıştır. Zorluk seviyesi kolaydan zora doğrudur ve sorular her oyunda rastgele sırayla gelir.",
+    },
     {"emoji": "💡", "text": "Hızlı düşün ve doğru cevabı ver!"},
 
     // Joker tanımı

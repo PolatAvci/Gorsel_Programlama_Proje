@@ -95,12 +95,7 @@ class CategoryPage extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Color(0xFFFFD700)),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => QuizHomePage(category: ''),
-              ),
-            );
+            Navigator.pop(context);
           },
         ),
       ),

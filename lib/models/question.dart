@@ -8,17 +8,20 @@ class Question {
   final int correctAnswerIndex;
   final String category;
 
+  final int difficulty;
+
   Question({
     required this.id, // Constructor'a ID'yi ekleyin
     required this.questionText,
     required this.options,
     required this.correctAnswerIndex,
     required this.category,
+    required this.difficulty,
   });
 
   factory Question.fromJson(Map<String, dynamic> json) {
     return Question(
-      id: json['id'] as int, // JSON'dan 'id' değerini al ve int'e cast et
+      id: json['id'] as int,
       questionText: json['questionText'] ?? '',
       options: [
         json['optionA'] ?? '',
@@ -28,6 +31,8 @@ class Question {
       ],
       correctAnswerIndex: json['correctAnswerIndex'] ?? 0,
       category: json['category'] ?? '',
+      difficulty:
+          json['difficulty'], // Backend'den geliyorsa bu şekilde alabilirsiniz
     );
   }
 }

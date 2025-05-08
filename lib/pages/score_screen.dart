@@ -162,13 +162,9 @@ class _ScoreScreenState extends State<ScoreScreen> {
                         _buildGradientButton(
                           text: "Tekrar Dene",
                           onTap: () {
-                            Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const CategoryPage(),
-                              ),
-                              (route) => false,
-                            );
+                            Navigator.pop(context);
+                            Navigator.pop(context);
+                            Navigator.pop(context);
                           },
                         ),
                         _buildGradientButton(
