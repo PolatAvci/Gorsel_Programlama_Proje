@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gorsel_programlama_proje/pages/category_page.dart';
-import 'package:gorsel_programlama_proje/pages/quizintropage.dart';
 import 'package:gorsel_programlama_proje/services/score_service.dart';
 import 'package:gorsel_programlama_proje/services/user_service.dart';
 import 'package:lottie/lottie.dart';

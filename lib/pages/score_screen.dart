@@ -1,7 +1,6 @@
 import 'package:fl_score_bar/fl_score_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:gorsel_programlama_proje/models/user.dart';
-import 'package:gorsel_programlama_proje/pages/category_page.dart';
 import 'package:gorsel_programlama_proje/pages/home_page.dart';
 import 'package:gorsel_programlama_proje/pages/login_page.dart'; // Yeni import
 import 'package:gorsel_programlama_proje/pages/score_history_page.dart';

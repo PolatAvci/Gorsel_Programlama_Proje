@@ -5,7 +5,6 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:gorsel_programlama_proje/models/question.dart';
 import 'package:gorsel_programlama_proje/pages/quiz_game_over.dart';
-import 'package:gorsel_programlama_proje/pages/quizhomepage.dart';
 import 'package:gorsel_programlama_proje/pages/score_screen.dart';
 import 'package:gorsel_programlama_proje/pages/time_finish_page.dart';
 import 'package:gorsel_programlama_proje/services/base_url.dart';
@@ -167,6 +166,7 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
 
   void checkAnswer(int index) async {
     if (questionAnswered) return;
+    if (doubleAnswerActive && index == firstSelectedAnswer) return;
 
     final questions = await _questionsFuture;
     final question = questions[currentQuestionIndex];
@@ -371,12 +371,19 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
         index == firstSelectedAnswer;
 
     Color bgColor = Colors.white;
+
     if (questionAnswered) {
       if (isCorrect) {
         bgColor = Colors.green;
-      } else if (isSelected || isFirstWrong)
-        // ignore: curly_braces_in_flow_control_structures
+      } else if (isSelected) {
+        // Sadece son seçilen yanlışı kırmızı yap
         bgColor = Colors.red;
+      } else if (isFirstWrong && doubleAnswerActive) {
+        // İlk yanlış seçim için kırmızı değil, turuncu veya beyaz bırak
+        bgColor =
+            Colors
+                .white; // çift cevapta ilk yanlış rengi ikinci seçim yapıldığında beyaza döner
+      }
     } else if (doubleAnswerActive && index == firstSelectedAnswer) {
       bgColor = Colors.orangeAccent;
     }

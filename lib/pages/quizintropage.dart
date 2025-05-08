@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gorsel_programlama_proje/pages/home_page.dart';
 import 'package:gorsel_programlama_proje/pages/information_quiz_intro.dart';
 import 'package:gorsel_programlama_proje/pages/quizhomepage.dart';
 import 'package:gorsel_programlama_proje/services/user_service.dart';

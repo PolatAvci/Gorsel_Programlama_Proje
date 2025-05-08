@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:gorsel_programlama_proje/pages/quiz_page.dart';
-import 'package:gorsel_programlama_proje/pages/quizhomepage.dart';
 
 class CategoryPage extends StatelessWidget {
   const CategoryPage({super.key});
