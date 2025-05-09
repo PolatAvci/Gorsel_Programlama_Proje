@@ -32,6 +32,8 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+.vscode/
+.packages
 
 # Symbolication related
 app.*.symbols
@@ -43,3 +45,57 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Android ile ilgili (varsa)
+android/.gradle/
+android/captures/
+android/.idea/
+android/local.properties
+android/.settings/
+
+# iOS ile ilgili (varsa)
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/.generated/
+ios/.idea/
+
+# macOS ile ilgili (varsa)
+macos/Flutter/Flutter.framework
+macos/Flutter/Flutter.podspec
+macos/.generated/
+
+# Web ile ilgili (varsa)
+web/.dart_tool/
+
+# Windows ile ilgili (varsa)
+windows/Flutter/ephemeral/
+
+# Linux ile ilgili (varsa)
+linux/flutter/ephemeral/
+
+# Genel IDE ayarları
+*.swp
+*.lock
+*.DS_Store
+*.log
+
+# ProjeBackend (.NET) için
+ProjeBackend/bin/
+ProjeBackend/obj/
+ProjeBackend/.vs/
+ProjeBackend/*.user
+ProjeBackend/*.suo
+ProjeBackend/*.cache
+ProjeBackend/*.dbmdl
+ProjeBackend/.vscode/
+ProjeBackend/.idea/
+ProjeBackend/Properties/launchSettings.json  # gizli kalmasını isteyebilirsin, isteğe bağlı
+
+# Dotnet global
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
