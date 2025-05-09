@@ -91,7 +91,6 @@ ProjeBackend/*.cache
 ProjeBackend/*.dbmdl
 ProjeBackend/.vscode/
 ProjeBackend/.idea/
-ProjeBackend/Properties/launchSettings.json  # gizli kalmasını isteyebilirsin, isteğe bağlı
 
 # Dotnet global
 .vs/
