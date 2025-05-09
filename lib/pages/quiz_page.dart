@@ -145,7 +145,7 @@ class _QuizPageState extends State<QuizPage> with TickerProviderStateMixin {
   }
 
   void startTimer() {
-    timer = Timer.periodic(Duration(seconds: 2), (t) async {
+    timer = Timer.periodic(Duration(seconds: 1), (t) async {
       if (timeLeft > 0) {
         setState(() => timeLeft--);
         if (timeLeft == 10) {

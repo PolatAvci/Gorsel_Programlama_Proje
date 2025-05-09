@@ -6,7 +6,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDateFormatting('tr', null); // Türkçe için gerekli
 
-  const primaryColor = Color.fromARGB(255, 207, 47, 35);
+  const primaryColor = Color.fromARGB(255, 132, 43, 177);
   const backgroundColor = Color.fromARGB(255, 50, 59, 63);
 
   runApp(
