@@ -1,72 +1,76 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\altan.png",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\altan.png",
       "PackagePath": "staticwebassets\\images\\cards\\altan.png"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\aydin.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\aydin.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\aydin.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\cem.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\cem.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\cem.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\deniz.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\deniz.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\deniz.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\derya.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\derya.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\derya.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\emir.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\emir.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\emir.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\emirPrime.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\emirPrime.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\emirPrime.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\fatma.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\fatma.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\fatma.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\fatmaPrime.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\fatmaPrime.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\fatmaPrime.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\isil.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\isil.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\isil.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\kemal.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\kemal.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\kemal.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\oguz.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\oguz.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\oguz.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\ozlem.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\ozlem.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\ozlem.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\tarikPrime.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\tarikPrime.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\tarikPrime.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\tolga.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\tolga.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\tolga.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\tugba.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\tugba.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\tugba.jpeg"
     },
     {
-      "Id": "C:\\Users\\erdem\\Desktop\\Gorsel_Programlama_Proje-1\\ProjeBackend\\wwwroot\\images\\cards\\turgut.jpeg",
+      "Id": "C:\\Users\\polat\\OneDrive\\Masaüstü\\Gorsel_Programlama_Proje\\ProjeBackend\\wwwroot\\images\\cards\\turgut.jpeg",
       "PackagePath": "staticwebassets\\images\\cards\\turgut.jpeg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProjeBackend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProjeBackend.Microsoft.AspNetCore.StaticWebAssets.props",

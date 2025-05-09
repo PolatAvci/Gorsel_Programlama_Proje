@@ -298,12 +298,12 @@ class _AddCardPageState extends State<AddCardPage> {
                 icon: Icon(Icons.arrow_drop_down),
                 elevation: 16,
                 style: TextStyle(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.secondary,
                   fontSize: 16,
                 ),
                 underline: Container(
                   height: 2,
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
                 focusColor: Colors.transparent,
                 borderRadius: BorderRadius.circular(10),

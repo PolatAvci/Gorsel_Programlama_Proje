@@ -166,7 +166,7 @@ class _LoginPageState extends State<LoginPage>
                             style: Theme.of(
                               context,
                             ).textTheme.bodySmall!.copyWith(
-                              color: Theme.of(context).primaryColor,
+                              color: Theme.of(context).colorScheme.secondary,
                             ),
                           ),
                         ),
@@ -279,7 +279,7 @@ class _LoginPageState extends State<LoginPage>
                             style: Theme.of(
                               context,
                             ).textTheme.bodySmall!.copyWith(
-                              color: Theme.of(context).primaryColor,
+                              color: Theme.of(context).colorScheme.secondary,
                             ),
                           ),
                         ),
