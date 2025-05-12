@@ -74,24 +74,29 @@ class _ScoreScreenState extends State<ScoreScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final User? user = UserService.user;
+
     return Scaffold(
-      body: Builder(
-        builder: (context) {
-          final User? user = UserService.user; // Kullanıcı bilgisi alınıyor
-          return SingleChildScrollView(
-            child: Stack(
-              children: [
-                Positioned.fill(
-                  child: Lottie.asset(
-                    'assets/animations/background.json',
-                    fit: BoxFit.cover,
-                  ),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Lottie.asset(
+              'assets/animations/background.json',
+              fit: BoxFit.cover,
+            ),
+          ),
+          SafeArea(
+            child: SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: MediaQuery.of(context).size.height,
                 ),
-                SafeArea(
+                child: IntrinsicHeight(
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
+                        const SizedBox(height: 20),
                         Lottie.asset(
                           'assets/animations/congrats.json',
                           height: 200,
@@ -133,7 +138,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                         ),
                         const SizedBox(height: 20),
                         Text(
-                          '${widget.score} / ${widget.totalScore}', // totalScore kullanılıyor
+                          '${widget.score} / ${widget.totalScore}',
                           style: const TextStyle(
                             fontSize: 36,
                             color: Colors.white,
@@ -210,10 +215,10 @@ class _ScoreScreenState extends State<ScoreScreen> {
                     ),
                   ),
                 ),
-              ],
+              ),
             ),
-          );
-        },
+          ),
+        ],
       ),
     );
   }

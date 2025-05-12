@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:gorsel_programlama_proje/components/box.dart';
 import 'package:gorsel_programlama_proje/components/slide_animation.dart';
@@ -25,6 +26,11 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
     with TickerProviderStateMixin {
   late final AnimationController _controller;
   bool showAnimation = true;
+  AudioPlayer player = AudioPlayer();
+  bool isPlay = false;
+  bool isFirstButtonPressed = false;
+  bool isSecondButtonPressed = false;
+  int sequence = 0;
 
   @override
   void initState() {
@@ -76,6 +82,13 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
                         });
                         widget.onGameUpdated();
                       } else {
+                        if (!isFirstButtonPressed) {
+                          isFirstButtonPressed = true;
+                          isSecondButtonPressed = false;
+                          sequence = 0;
+                        }
+                        sequence++;
+                        playSound();
                         setState(() {
                           widget.game.deSelectTournament(1);
                           widget.game.updateTournamentTour();
@@ -143,6 +156,14 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
                         });
                         widget.onGameUpdated();
                       } else {
+                        if (!isSecondButtonPressed) {
+                          isSecondButtonPressed = true;
+                          isFirstButtonPressed = false;
+                          sequence = 0;
+                        }
+                        sequence++;
+                        playSound();
+
                         setState(() {
                           widget.game.deSelectTournament(0);
                           widget.game.updateTournamentTour();
@@ -273,5 +294,24 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
         },
       ),
     );
+  }
+
+  Future<void> playSound() async {
+    String? path;
+    if (sequence == 2) {
+      path = "sounds/double.mp3";
+    } else if (sequence == 3) {
+      path = "sounds/triple.mp3";
+    } else if (sequence == 4) {
+      path = "sounds/quadra.mp3";
+    } else if (sequence == 5) {
+      path = "sounds/penta.mp3";
+    } else if (sequence > 5) {
+      path = "sounds/legendary.mp3";
+    }
+    if (path == null) {
+      return;
+    }
+    await player.play(AssetSource(path));
   }
 }

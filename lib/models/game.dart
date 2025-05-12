@@ -86,6 +86,9 @@ class Game {
 
   void deSelectTournament(int deSelectedIndex) {
     _rankCard.insert(0, cards.removeAt(deSelectedIndex));
+    if (deSelectedIndex == 0) {
+      cards.insert(0, cards.removeLast());
+    }
   }
 
   void updateTournamentTour() {
