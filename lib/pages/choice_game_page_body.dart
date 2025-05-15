@@ -275,6 +275,22 @@ class _ChoiceGamePageBodyState extends State<ChoiceGamePageBody>
         ad1 == "Emir (Prime)" && ad2 == "Oğuz" ||
         ad1 == "Oğuz" && ad2 == "Emir (Prime)") {
       animationPath = "assets/animations/Beer.json";
+    } else if (ad1 == "İstatistik ve Olasılık" && ad2 == "Fizik 2" ||
+        ad2 == "İstatistik ve Olasılık" && ad1 == "Fizik 2") {
+      animationPath = "assets/animations/Kafatasi.json";
+    } else if (ad1 == "Veri Yapıları ve Algoritmalar" &&
+            ad2 == "İşletim Sistemleri" ||
+        ad2 == "Veri Yapıları ve Algoritmalar" && ad1 == "İşletim Sistemleri") {
+      animationPath = "assets/animations/dinozor.json";
+    } else if (ad1 == "Matematik" && ad2 == "Assembly" ||
+        ad2 == "Matematik" && ad1 == "Assembly") {
+      animationPath = "assets/animations/gameover.json";
+    } else if (ad1 == "Matematik" && ad2 == "Assembly" ||
+        ad2 == "Matematik" && ad1 == "Assembly") {
+      animationPath = "assets/animations/gameover.json";
+    } else if (ad1 == "Elektrik" && ad2 == "Elektronik" ||
+        ad2 == "Elektronik" && ad1 == "Elektrik") {
+      animationPath = "assets/animations/ligthning.json";
     }
     if (animationPath == null || animationPath.isEmpty) {
       return SizedBox();
